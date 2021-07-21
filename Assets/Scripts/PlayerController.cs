@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour
             //once the knife isn't stationary, we can apply gravity (it will not automatically fall down)
             player.gravityScale = 1;
 
-            //TODO: Decrement number of available knives
+            //Decrement number of available knives
+            GameController.instance.uiController.DecreaseKnifeDisplay();
         }
     }
 
@@ -44,7 +45,6 @@ public class PlayerController : MonoBehaviour
 
         //if the knife happens to be active (1st collision), deactivate it
         is_active = false;
-
         
         if (collision.collider.tag == "Target")
         {
@@ -58,13 +58,17 @@ public class PlayerController : MonoBehaviour
             knifeCollider.offset = new Vector2(knifeCollider.offset.x, -0.4f);
             knifeCollider.size = new Vector2(knifeCollider.size.x, 1.2f);
 
-            //TODO: Spawn another knife
+            //Spawn another knife
+            GameController.instance.CheckKnifeHit();
         } //collision with a log
         else if (collision.collider.tag == "Knife")
         {
             //start rapidly moving downwards
-            player.velocity = new Vector2(player.velocity.x, -2);
-            //TODO: Game Over
+            player.velocity = new Vector2(player.velocity.x, -5);
+            Debug.Log("Collision with other knife");
+            
+            //Game Over
+            GameController.instance.SetGameOver(false);
         } //collision with another knife
     }
 }
