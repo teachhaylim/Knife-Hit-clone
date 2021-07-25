@@ -15,9 +15,10 @@ public class PlayerController : MonoBehaviour
         player = GetComponent<Rigidbody2D>();
         knifeCollider = GetComponent<BoxCollider2D>();
 
-        //Random Player Sprite
-        //var temp = Resources.LoadAll<Sprite>("Player");
-        //gameObject.GetComponent<SpriteRenderer>().sprite = temp[new System.Random().Next(0, temp.Length - 1)];
+        //TODO load player sprite and assign to gameobject based on userdata.knife_sprite
+        //var temp = Resources.LoadAll("Player");
+
+        //gameObject.GetComponent<SpriteRenderer>().sprite = temp[1];
     }
 
     void Update()

@@ -11,11 +11,15 @@ public class GameController : MonoBehaviour
     public Vector2 spawnLocation;
     public GameObject knifeObject;
     public UIController uiController { get; set; }
+    public Userdata user;
 
     private void Awake()
     {
         instance = this;
         uiController = GetComponent<UIController>();
+        user = new Userdata();
+        user.SaveData();
+        user.LoadData();
     }
 
     private void Start()
@@ -61,28 +65,5 @@ public class GameController : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
-    }
-}
-
-public class UserData
-{
-    public int score = 0;
-    public string knife_sprite = "knife_0";
-
-    public void SaveData()
-    {
-
-    }
-
-    public void LoadData()
-    {
-
-    }
-
-    public UserData() { }
-    public UserData(int _score, string _knife_sprite)
-    {
-        this.score = _score;
-        this.knife_sprite = _knife_sprite;
     }
 }
