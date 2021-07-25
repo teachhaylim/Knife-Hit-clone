@@ -55,11 +55,7 @@ public class GameController : MonoBehaviour
 
             RestartGame();
         }
-        else
-        {
-            Debug.Log("Show Restart BTn");
-            uiController.ShowRestartButton();
-        }
+        //TODO rework restart logic
     }
 
     public void RestartGame()
