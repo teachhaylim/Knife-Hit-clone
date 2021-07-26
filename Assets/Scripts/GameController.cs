@@ -3,23 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(UIController))]
 public class GameController : MonoBehaviour
 {
     public static GameController instance { get; set; }
     public int knifeCount;
     public Vector2 spawnLocation;
     public GameObject knifeObject;
-    public UIController uiController { get; set; }
+    public UIController uiController;
     public Userdata user;
 
     private void Awake()
     {
         instance = this;
         uiController = GetComponent<UIController>();
-        user = new Userdata();
-        user.SaveData();
-        user.LoadData();
+        knifeCount = new System.Random().Next(4, 10);
+
+        //TODO rework userdata
+        //user = new Userdata();
+        //user.SaveData();
+        //user.LoadData();
     }
 
     private void Start()
@@ -59,7 +61,10 @@ public class GameController : MonoBehaviour
 
             RestartGame();
         }
-        //TODO rework restart logic
+        else
+        {
+            uiController.ShowRestartMenu();
+        }
     }
 
     public void RestartGame()

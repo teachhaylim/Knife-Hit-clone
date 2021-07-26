@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private Vector2 throwForce;
+    public Vector2 throwForce;
     private bool is_active = true;
     private Rigidbody2D player;
     private BoxCollider2D knifeCollider;
@@ -44,6 +43,7 @@ public class PlayerController : MonoBehaviour
             player.velocity = new Vector2(0, 0);
             player.bodyType = RigidbodyType2D.Kinematic;
             transform.SetParent(collision.collider.transform);
+            player.tag = "Knife";
 
             knifeCollider.offset = new Vector2(knifeCollider.offset.x, -0.4f);
             knifeCollider.size = new Vector2(knifeCollider.size.x, 1.2f);
@@ -53,7 +53,6 @@ public class PlayerController : MonoBehaviour
         else if (collision.collider.tag == "Knife")
         {
             player.velocity = new Vector2(player.velocity.x, -5);
-            Debug.Log("Collision with other knife");
 
             GameController.instance.SetGameOver(false);
         }

@@ -5,20 +5,15 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject restartButton;
+    public GameObject restartMenu;
+    public GameObject panelKnives;
+    public GameObject knifeIcon;
+    public Color knifeIconColor;
+    public int knifeIconCount = 0;
 
-    [SerializeField]
-    private GameObject panelKnives;
-    [SerializeField]
-    private GameObject knifeIcon;
-    [SerializeField]
-    private Color knifeIconColor;
-    private int knifeIconCount = 0;
-    
-    public void ShowRestartButton()
+    public void ShowRestartMenu()
     {
-        restartButton.SetActive(true);
+        restartMenu.SetActive(true);
     }
 
     public void InitialKnifeDisplay(int max)

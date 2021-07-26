@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class TargetRotationController : MonoBehaviour
 {
-    [SerializeField] 
-    private MyRotation[] patterns;
+    public MyRotation[] patterns;
     private WheelJoint2D wheelJoint;
     private JointMotor2D motor;
     public float torques = 10000;
