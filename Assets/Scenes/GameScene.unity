@@ -412,7 +412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &477898705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -603,8 +603,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c0770becf4b73419dfbfe2e10ad8b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartMenu: {fileID: 0}
-  panelKnives: {fileID: 477898704}
+  restartMenu: {fileID: 789343405}
+  panelKnives: {fileID: 1289037867}
   knifeIcon: {fileID: 9171463246576719640, guid: f7777e43afc969a479acadcd687398a1, type: 3}
   knifeIconColor: {r: 1, g: 0, b: 0, a: 1}
   knifeIconCount: 0
@@ -772,7 +772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &850507025
 RectTransform:
   m_ObjectHideFlags: 0
@@ -806,7 +806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
