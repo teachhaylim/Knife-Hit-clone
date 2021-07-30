@@ -11,12 +11,14 @@ public class GameController : MonoBehaviour
     public GameObject knifeObject;
     public UIController uiController;
     public Userdata user;
+    public Transform[] targets;
+    public GameObject currentGameObject;
 
     private void Awake()
     {
         instance = this;
         uiController = GetComponent<UIController>();
-        knifeCount = new System.Random().Next(4, 10);
+        knifeCount = new System.Random().Next(4, 5);
 
         //TODO rework userdata
         //user = new Userdata();
@@ -26,6 +28,9 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        //Dirty Technique
+        currentGameObject = Instantiate(targets[new System.Random().Next(0, targets.Length)].gameObject, new Vector2(0, 3), Quaternion.identity);
+
         uiController.InitialKnifeDisplay(knifeCount);
         SpawnKnives();
     }
@@ -38,6 +43,8 @@ public class GameController : MonoBehaviour
         }
         else
         {
+            //TODO randomly clone new target object;
+
             SetGameOver(true);
         }
     }

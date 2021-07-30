@@ -19,6 +19,7 @@ public class TargetRotationController : MonoBehaviour
     private IEnumerator PlayPattern()
     {
         int index = 0;
+
         while (true)
         {
             yield return new WaitForFixedUpdate();
