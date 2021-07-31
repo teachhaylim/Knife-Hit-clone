@@ -2,19 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
-    public GameObject restartMenu;
     public GameObject panelKnives;
     public GameObject knifeIcon;
     public Color knifeIconColor;
     public int knifeIconCount = 0;
-
-    public void ShowRestartMenu()
-    {
-        restartMenu.SetActive(true);
-    }
 
     public void InitialKnifeDisplay(int max)
     {

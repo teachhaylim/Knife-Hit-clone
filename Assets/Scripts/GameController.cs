@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
         instance = this;
         uiController = GetComponent<UIController>();
         knifeCount = new System.Random().Next(4, 5);
+        user.path = Application.dataPath + "/data/userdata.json";
 
         //TODO rework userdata
         //user = new Userdata();
@@ -57,7 +58,7 @@ public class GameController : MonoBehaviour
 
     public void SetGameOver(bool option)
     {
-        StartCoroutine("GameOverScreen", option);
+        StartCoroutine(GameOverScreen(option));
     }
 
     private IEnumerator GameOverScreen(bool option)
@@ -70,12 +71,13 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            uiController.ShowRestartMenu();
+            LevelLoader loader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
+            loader.LoadNextLevel(1);
         }
     }
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

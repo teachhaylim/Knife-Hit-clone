@@ -8,8 +8,7 @@ public class Userdata
 {
     public int score = 0;
     public string knife_sprite = "knife_0";
-    private string path = Application.dataPath + "/data/userdata.json";
-
+    public string path;
 
     public void SaveData()
     {
