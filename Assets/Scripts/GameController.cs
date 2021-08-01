@@ -13,17 +13,17 @@ public class GameController : MonoBehaviour
     public Userdata user;
     public Transform[] targets;
     public GameObject currentGameObject;
+    private int currentScore = 0;
+    private string path;
 
     private void Awake()
     {
         instance = this;
         uiController = GetComponent<UIController>();
-        knifeCount = new System.Random().Next(4, 5);
-        user.path = Application.dataPath + "/data/userdata.json";
+        knifeCount = new System.Random().Next(5, 10);
+        path = Application.dataPath + "/data/userdata.json";
 
         //TODO rework userdata
-        //user = new Userdata();
-        //user.SaveData();
         //user.LoadData();
     }
 
@@ -38,7 +38,10 @@ public class GameController : MonoBehaviour
 
     public void CheckKnifeHit()
     {
-        if(knifeCount > 0)
+        currentScore++;
+        uiController.scoreText.text = currentScore.ToString();
+
+        if (knifeCount > 0)
         {
             SpawnKnives();
         }
@@ -73,9 +76,13 @@ public class GameController : MonoBehaviour
         {
             LevelLoader loader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
             loader.LoadNextLevel(1);
+
+            //Save user score
+            user.score = currentScore;
+            user.SaveData(path, user);
         }
     }
-
+    
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

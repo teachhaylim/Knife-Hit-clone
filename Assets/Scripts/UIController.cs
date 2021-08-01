@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour
 {
     public GameObject panelKnives;
     public GameObject knifeIcon;
+    public Text scoreText;
     public Color knifeIconColor;
     public int knifeIconCount = 0;
 
