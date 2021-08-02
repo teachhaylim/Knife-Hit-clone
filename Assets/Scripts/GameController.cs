@@ -20,11 +20,20 @@ public class GameController : MonoBehaviour
     {
         instance = this;
         uiController = GetComponent<UIController>();
-        knifeCount = new System.Random().Next(5, 10);
+        knifeCount = new System.Random().Next(5, 7);
         path = Application.dataPath + "/data/userdata.json";
+        user = Userdata.LoadData(path);
 
-        //TODO rework userdata
-        //user.LoadData();
+        if(PlayerPrefs.GetInt("score") == 0)
+        {
+            currentScore = 0;
+            uiController.scoreText.text = currentScore.ToString();
+        }
+        else
+        {
+            currentScore = PlayerPrefs.GetInt("score");
+            uiController.scoreText.text = currentScore.ToString();
+        }
     }
 
     private void Start()
@@ -66,6 +75,8 @@ public class GameController : MonoBehaviour
 
     private IEnumerator GameOverScreen(bool option)
     {
+        PlayerPrefs.SetInt("score", currentScore);
+
         if (option)
         {
             yield return new WaitForSecondsRealtime(0.3f);
@@ -77,9 +88,11 @@ public class GameController : MonoBehaviour
             LevelLoader loader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
             loader.LoadNextLevel(1);
 
-            //Save user score
-            user.score = currentScore;
-            user.SaveData(path, user);
+            if (user.score < currentScore)
+            {
+                user.score = currentScore;
+                user.SaveData(path, user);
+            }
         }
     }
     

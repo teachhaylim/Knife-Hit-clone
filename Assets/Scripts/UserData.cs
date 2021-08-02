@@ -16,13 +16,15 @@ public class Userdata
         File.WriteAllText(path, temp);
     }
 
-    public void LoadData(string path)
+    public static Userdata LoadData(string path)
     {
-        var file = File.ReadAllText(path);
+        //var file = File.ReadAllText(path);
 
-        Userdata data = JsonUtility.FromJson<Userdata>(file);
-        knife_sprite = data.knife_sprite;
-        score = data.score;
+        //Userdata data = JsonUtility.FromJson<Userdata>(File.ReadAllText(path));
+        //knife_sprite = data.knife_sprite;
+        //score = data.score;
+
+        return JsonUtility.FromJson<Userdata>(File.ReadAllText(path));
     }
 
     public Userdata() { }

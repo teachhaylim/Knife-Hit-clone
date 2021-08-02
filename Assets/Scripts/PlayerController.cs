@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
         {
             player.AddForce(throwForce, ForceMode2D.Impulse);
             player.gravityScale = 1;
+            AudioManager.audioManager.Play("throw");
 
             GameController.instance.uiController.DecreaseKnifeDisplay();
         }
@@ -40,6 +41,15 @@ public class PlayerController : MonoBehaviour
         
         if (collision.collider.tag == "Target")
         {
+            if (GameController.instance.knifeCount == 0)
+            {
+                AudioManager.audioManager.Play("hit_last");
+            }
+            else
+            {
+                AudioManager.audioManager.Play("hit");
+            }
+
             player.velocity = new Vector2(0, 0);
             player.bodyType = RigidbodyType2D.Kinematic;
             transform.SetParent(collision.collider.transform);
@@ -52,6 +62,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.collider.tag == "Knife")
         {
+            AudioManager.audioManager.Play("knife_hit");
+
             player.velocity = new Vector2(player.velocity.x, -5);
 
             GameController.instance.SetGameOver(false);
