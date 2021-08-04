@@ -8,16 +8,18 @@ public class PlayerController : MonoBehaviour
     private bool is_active = true;
     private Rigidbody2D player;
     private BoxCollider2D knifeCollider;
+    public iTween.EaseType easeType;
 
     private void Awake()
     {
         player = GetComponent<Rigidbody2D>();
         knifeCollider = GetComponent<BoxCollider2D>();
 
-        //TODO load player sprite and assign to gameobject based on userdata.knife_sprite
         //var temp = Resources.LoadAll("Player");
 
-        //gameObject.GetComponent<SpriteRenderer>().sprite = temp[1];
+        //Debug.Log(PlayerPrefs.GetInt("player_sprite"));
+
+        gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("player_sprite"));
     }
 
     void Update()
@@ -41,6 +43,9 @@ public class PlayerController : MonoBehaviour
         
         if (collision.collider.tag == "Target")
         {
+            //GameObject myobject = collision.collider.gameObject;
+            //iTween.MoveTo(myobject, iTween.Hash("x", 1, "time", 0.5, "easetype", easeType, "oncomplete", "OnComplete", "oncompletetarget", myobject));
+
             if (GameController.instance.knifeCount == 0)
             {
                 AudioManager.audioManager.Play("hit_last");
@@ -68,5 +73,11 @@ public class PlayerController : MonoBehaviour
 
             GameController.instance.SetGameOver(false);
         }
+    }
+
+    public void OnComplete(GameObject myobject)
+    {
+        Debug.Log("On Move Complete");
+        iTween.MoveTo(myobject, iTween.Hash("x", 0, "time", 0.5, "easetype", easeType, "oncomplete", "OnComplete", "oncompletetarget", myobject));
     }
 }

@@ -10,11 +10,18 @@ public class UIController : MonoBehaviour
     public GameObject knifeIcon;
     public Text scoreText;
     public Color knifeIconColor;
-    public int knifeIconCount = 0;
+    private int knifeIconCount = 0;
 
     public void InitialKnifeDisplay(int max)
     {
-        for(var i = 0; i < max; i++)
+        knifeIconCount = max - 1;
+
+        foreach (Transform child in panelKnives.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        for (var i = 0; i < max; i++)
         {
             Instantiate(knifeIcon, panelKnives.transform);
         }
@@ -22,6 +29,6 @@ public class UIController : MonoBehaviour
 
     public void DecreaseKnifeDisplay()
     {
-        panelKnives.transform.GetChild(knifeIconCount++).GetComponent<Image>().color = knifeIconColor;
+        panelKnives.transform.GetChild(knifeIconCount--).GetComponent<Image>().color = knifeIconColor;
     }
 }
