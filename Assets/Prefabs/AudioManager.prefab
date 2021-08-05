@@ -49,46 +49,38 @@ MonoBehaviour:
     name: apple_hit
     volumn: 1
     isLoop: 0
-    isPlaying: 0
   - source: {fileID: 0}
-    sound: {fileID: 8300000, guid: f63b6d7fcb0f29a4f9544563a28aff01, type: 3}
+    sound: {fileID: 8300000, guid: 3ca515c13c710c646810e949b70382bf, type: 3}
     name: game_over
-    volumn: 0.3
+    volumn: 1
     isLoop: 0
-    isPlaying: 0
   - source: {fileID: 0}
     sound: {fileID: 8300000, guid: 922051c69948ffe44bd781960c773cac, type: 3}
     name: button
     volumn: 1
     isLoop: 0
-    isPlaying: 0
   - source: {fileID: 0}
     sound: {fileID: 8300000, guid: 4ffad7c58774a6348b5c05b7f8eecb9d, type: 3}
     name: hit
     volumn: 1
     isLoop: 0
-    isPlaying: 0
   - source: {fileID: 0}
     sound: {fileID: 8300000, guid: eb78dffc7e645d141a7c1c5cc21b0c17, type: 3}
     name: hit_last
     volumn: 1
     isLoop: 0
-    isPlaying: 0
   - source: {fileID: 0}
     sound: {fileID: 8300000, guid: 3c421d84e6979b44ab1c92b826d3b672, type: 3}
     name: knife_hit
     volumn: 1
     isLoop: 0
-    isPlaying: 0
   - source: {fileID: 0}
     sound: {fileID: 8300000, guid: 47bc52f01df512944bbb5883b1d31467, type: 3}
     name: throw
     volumn: 1
     isLoop: 0
-    isPlaying: 0
   - source: {fileID: 0}
     sound: {fileID: 8300000, guid: c2514774bb86a804c9da54e62c81f2f6, type: 3}
     name: background_music
     volumn: 0.3
     isLoop: 1
-    isPlaying: 0

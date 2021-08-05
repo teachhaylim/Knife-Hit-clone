@@ -54,6 +54,6 @@ public class StartMenu : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.audioManager.Play("background_music");
+        //AudioManager.audioManager.Play("background_music");
     }
 }
