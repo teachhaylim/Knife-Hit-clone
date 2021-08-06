@@ -490,10 +490,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnLocation: {x: 0, y: -2.5}
   targets:
-  - {fileID: 1661580129984894239, guid: 55f201673dee9b240aba0bc0c20117cc, type: 3}
-  - {fileID: 1661580129984894239, guid: 55f201673dee9b240aba0bc0c20117cc, type: 3}
-  - {fileID: 1661580129984894239, guid: 55f201673dee9b240aba0bc0c20117cc, type: 3}
-  - {fileID: 1661580129984894239, guid: 55f201673dee9b240aba0bc0c20117cc, type: 3}
+  - {fileID: 6516125541219487440, guid: eb90b5001e3454b4bae9e2c05c1923f5, type: 3}
+  - {fileID: 6137113918134776643, guid: 3b2fb7ca07454ce47bbf2de0f71605e1, type: 3}
+  - {fileID: 9102702551511080003, guid: 9a4f521b60dbfc04d894ea90ff51a5d5, type: 3}
+  - {fileID: 8083865946088036609, guid: 61bdc744b2b83fc4d941e1c972e0bf02, type: 3}
+  - {fileID: 7862525720124333428, guid: 65943d855ecb06e43a9d210a5e29264b, type: 3}
+  - {fileID: 8452934335494673057, guid: 71409679622d479429a39c1e9ecaefdd, type: 3}
+  - {fileID: 1805119791103753037, guid: 4513021ae656d6c4285252b889bdadd7, type: 3}
+  - {fileID: 7073423045743270500, guid: f3398da2ebf6a9e42a2fc898f7957639, type: 3}
+  - {fileID: 4727146730896547365, guid: 58dabe0c3b39b4e43b8043e4415494d1, type: 3}
+  - {fileID: 2732862057046201465, guid: ae3a1610309bab144912e712d0e82cbb, type: 3}
   - {fileID: 1661580129984894239, guid: 55f201673dee9b240aba0bc0c20117cc, type: 3}
   currentGameObject: {fileID: 1661580129984894179, guid: 55f201673dee9b240aba0bc0c20117cc, type: 3}
   playerObject: {fileID: 8419877366899133230, guid: 5b154c5fbc0c47f489d49bef4d62a121, type: 3}
