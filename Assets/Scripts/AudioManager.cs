@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+// Script to control Audio logic
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;

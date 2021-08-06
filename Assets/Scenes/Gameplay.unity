@@ -469,7 +469,6 @@ GameObject:
   m_Component:
   - component: {fileID: 548569413}
   - component: {fileID: 548569411}
-  - component: {fileID: 548569412}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -491,34 +490,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnLocation: {x: 0, y: -2.5}
   targets:
-  - {fileID: 693932767134660752, guid: a860cb5b26ee0b044abad8ccb8c7b9f1, type: 3}
-  - {fileID: 8296544408956454770, guid: 769fcdb253e03d04392c7e71a9c7ef25, type: 3}
-  - {fileID: 6096413570872310392, guid: 5bb943853fa903343b146e1dc8d15feb, type: 3}
-  - {fileID: 322110639993393646, guid: e36d36c26b8b6aa42936a6d1df3be762, type: 3}
+  - {fileID: 1661580129984894239, guid: 55f201673dee9b240aba0bc0c20117cc, type: 3}
+  - {fileID: 1661580129984894239, guid: 55f201673dee9b240aba0bc0c20117cc, type: 3}
+  - {fileID: 1661580129984894239, guid: 55f201673dee9b240aba0bc0c20117cc, type: 3}
+  - {fileID: 1661580129984894239, guid: 55f201673dee9b240aba0bc0c20117cc, type: 3}
   - {fileID: 1661580129984894239, guid: 55f201673dee9b240aba0bc0c20117cc, type: 3}
   currentGameObject: {fileID: 1661580129984894179, guid: 55f201673dee9b240aba0bc0c20117cc, type: 3}
+  playerObject: {fileID: 8419877366899133230, guid: 5b154c5fbc0c47f489d49bef4d62a121, type: 3}
   knifeCount: 5
-  uiController: {fileID: 0}
-  knifeObject: {fileID: 8419877366899133230, guid: 5b154c5fbc0c47f489d49bef4d62a121, type: 3}
-  user:
-    score: 0
-    knife_sprite: knife_0
---- !u!114 &548569412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 548569410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09c0770becf4b73419dfbfe2e10ad8b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   panelKnives: {fileID: 1289037867}
   knifeIcon: {fileID: 9171463246576719640, guid: f7777e43afc969a479acadcd687398a1, type: 3}
   scoreText: {fileID: 1152832099}
-  knifeIconColor: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
+  knifeIconColor: {r: 0.254717, g: 0.254717, b: 0.254717, a: 1}
 --- !u!4 &548569413
 Transform:
   m_ObjectHideFlags: 0

@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+// Script for attach prefabs levels
 public class TargetEnemy : MonoBehaviour
 {
     private Rigidbody2D player;
@@ -11,10 +10,7 @@ public class TargetEnemy : MonoBehaviour
     {
         player = GetComponent<Rigidbody2D>();
         knifeCollider = GetComponent<BoxCollider2D>();
-    }
 
-    void Start()
-    {
         player.velocity = new Vector2(0, 0);
         player.bodyType = RigidbodyType2D.Kinematic;
         transform.SetParent(player.transform);

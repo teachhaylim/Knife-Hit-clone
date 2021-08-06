@@ -5,19 +5,16 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Vector2 throwForce;
+    public iTween.EaseType easeType;
+
     private bool is_active = true;
     private Rigidbody2D player;
     private BoxCollider2D knifeCollider;
-    public iTween.EaseType easeType;
 
     private void Awake()
     {
         player = GetComponent<Rigidbody2D>();
         knifeCollider = GetComponent<BoxCollider2D>();
-
-        //var temp = Resources.LoadAll("Player");
-
-        //Debug.Log(PlayerPrefs.GetInt("player_sprite"));
 
         gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("player_sprite"));
     }
@@ -30,10 +27,11 @@ public class PlayerController : MonoBehaviour
             player.gravityScale = 1;
             AudioManager.audioManager.Play("throw");
 
-            GameController.instance.uiController.DecreaseKnifeDisplay();
+            GameController.instance.DecreaseKnifeDisplay();
         }
     }
 
+    // Check collision between target or enemies
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!is_active)

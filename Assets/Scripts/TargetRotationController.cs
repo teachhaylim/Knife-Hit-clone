@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Script to control target rotation
 public class TargetRotationController : MonoBehaviour
 {
-    public MyRotation[] patterns;
+    public RotationPattern[] patterns;
     private WheelJoint2D wheelJoint;
     private JointMotor2D motor;
     public float torques = 10000;
@@ -34,4 +35,11 @@ public class TargetRotationController : MonoBehaviour
             index = index < patterns.Length ? index : 0;
         }
     }
+}
+
+[System.Serializable]
+public class RotationPattern
+{
+    public float Speed;
+    public float Duration;
 }
