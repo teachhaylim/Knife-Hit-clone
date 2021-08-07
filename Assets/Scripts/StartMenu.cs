@@ -14,6 +14,12 @@ public class StartMenu : MonoBehaviour
     private void Awake()
     {
         Time.timeScale = 0f;
+
+        if (PlayerPrefs.GetString("player_sprite") == "")
+        {
+            PlayerPrefs.SetString("player_sprite", "Player/knife_0");
+        }
+
         sprite.sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("player_sprite")); //load player (knife) sprite based on user saved sprite
         highScore.text = string.Format("High Score - {0}", PlayerPrefs.GetInt("highScore").ToString());  //load user's high score
 
