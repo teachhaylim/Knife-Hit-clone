@@ -15,9 +15,11 @@ public class StartMenu : MonoBehaviour
     {
         Time.timeScale = 0f;
 
+        PlayerPrefs.SetString("player_sprite", "");
+
         if (PlayerPrefs.GetString("player_sprite") == "")
         {
-            PlayerPrefs.SetString("player_sprite", "Player/knife_0");
+            PlayerPrefs.SetString("player_sprite", "Player/knife_3");
         }
 
         sprite.sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("player_sprite")); //load player (knife) sprite based on user saved sprite
