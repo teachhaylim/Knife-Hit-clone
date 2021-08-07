@@ -20,8 +20,8 @@ public class StartMenu : MonoBehaviour
         //AudioManager.audioManager.Play("background_music");
         //highScore.text = string.Format("High Score - {0}", Userdata.LoadData(Application.dataPath + "/data/userdata.json").score.ToString());
 
-        //LevelLoader loader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
-        //loader.LoadNextLevel(0);
+        LevelLoader loader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
+        loader.LoadNextLevel(0);
     }
 
     public void ChangePlayerSprite()
